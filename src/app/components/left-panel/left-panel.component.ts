@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { faGuitar, faHome, faMusic, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-left-panel',
   templateUrl: './left-panel.component.html',
   styleUrls: ['./left-panel.component.scss']
 })
-export class LeftPanelComponent {
+export class LeftPanelComponent implements OnInit {
+
+  // Icons
+  homeIcon = faHome
+  searchIcon = faSearch
+  artistsIcon = faGuitar
+  playlistIcon = faMusic
+
+  constructor() {}
+
+  ngOnInit(): void {
+      
+  }
 
 }
