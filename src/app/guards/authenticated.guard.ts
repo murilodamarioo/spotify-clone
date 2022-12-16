@@ -21,17 +21,15 @@ export class AuthenticatedGuard implements CanLoad {
       return false
     }
 
-    return new Promise((res) => {
-      const userCreated = this.spotifyService.initializeUser()
+    return new Promise(async (res) => {
+      const userCreated = await this.spotifyService.initializeUser()
 
       if (userCreated) {
         res(true)
       } else {
         res(this.unauthenticated())
       }
-    })
-      
-    return true;
+    })      
   }
 
   unauthenticated() {

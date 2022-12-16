@@ -31,7 +31,7 @@ export class SpotifyService {
 
       this.handleAccessToken(token)
       await this.getSpotifyUser()
-      return true
+      return !!this.user
     
     } catch (error) {
       return false
