@@ -8,6 +8,8 @@ import { faGuitar, faHome, faMusic, faSearch } from '@fortawesome/free-solid-svg
 })
 export class LeftPanelComponent implements OnInit {
 
+  menuSelected: string = 'Início'
+
   // Icons
   homeIcon = faHome
   searchIcon = faSearch
@@ -17,7 +19,10 @@ export class LeftPanelComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-      
+  }
+
+  buttonClick(button: string) {
+    this.menuSelected = button
   }
 
 }
