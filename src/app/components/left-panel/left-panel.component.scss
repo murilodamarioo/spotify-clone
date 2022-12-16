@@ -30,13 +30,34 @@ $n-between-menus: 10px;
         .menu-container {
             width: 100%;
 
+            &.flex {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
             &.options {
                 min-height: $h-menu-options;
-                flex-direction: column;
                 
                 * {
                     margin-bottom: $n-between-menus;
                 }
+            }
+        }
+
+        .playlist-title {
+            margin: 10px 0px;
+            align-self: flex-start;
+            font-weight: bold;
+            font-size: .7rem;
+            color: $black-transparent-30;
+        }
+
+        .playlist-scroll {
+            width: 100%;
+
+            * {
+                margin-bottom: $n-between-menus;
             }
         }
     }
