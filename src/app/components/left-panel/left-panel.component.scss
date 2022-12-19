@@ -2,7 +2,7 @@
 
 $h-spotify-logo: 120px;
 $h-menu-options: 150px;
-$n-between-menus: 10px;
+$m-between-menus: 10px;
 
 :host {
     max-width: 300px;
@@ -40,7 +40,7 @@ $n-between-menus: 10px;
                 min-height: $h-menu-options;
                 
                 * {
-                    margin-bottom: $n-between-menus;
+                    margin-bottom: $m-between-menus;
                 }
             }
         }
@@ -55,9 +55,24 @@ $n-between-menus: 10px;
 
         .playlist-scroll {
             width: 100%;
+            max-height: 50vh;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar-track {
+                background-color: #F4F4F4;
+                border-radius: 5px;
+            }
+            &::-webkit-scrollbar {
+                width: 6px;
+                background: #f4f4f4;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: $primary-color;
+                border-radius: 5px;
+            }
 
             * {
-                margin-bottom: $n-between-menus;
+                margin-bottom: $m-between-menus;
             }
         }
     }
