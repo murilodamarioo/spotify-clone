@@ -4,3 +4,4 @@ export { MenuButtonComponent } from './menu-button/menu-button.component';
 
 export { UserFooterComponent } from './user-footer/user-footer.component';
 
+export { HomeComponent } from './home/home.component';

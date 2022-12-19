@@ -20,7 +20,7 @@ export class LoginComponent {
     
     if (!!token) {
       this.spotifyService.handleAccessToken(token)
-      this.router.navigate(['/player'])
+      this.router.navigate(['/player/home'])
     }
   }
 
