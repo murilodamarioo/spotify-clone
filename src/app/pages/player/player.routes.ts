@@ -1,6 +1,5 @@
-import { PlayerComponent } from './player.component';
 import { Routes } from '@angular/router';
-import { HomeComponent } from '..';
+import { HomeComponent, PlayerComponent } from '..';
 
 export const PlayerRoutes: Routes = [
     {
