@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit {
   }
 
   async getMusics() {
-    const musics = this.spotifyService.searchMusics()
+     this.musics = await this.spotifyService.searchMusics()
+     console.log(this.musics)
   }
+
 }
