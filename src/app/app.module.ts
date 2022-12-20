@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { RightPanelComponent } from './components/right-panel/right-panel.component';
 
 @NgModule({
   declarations: [

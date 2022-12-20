@@ -4,7 +4,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlayerComponent } from './player.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { UserFooterComponent, LeftPanelComponent, MenuButtonComponent, TopArtistComponent } from 'src/app/components';
+import { 
+  UserFooterComponent, 
+  LeftPanelComponent, 
+  MenuButtonComponent, 
+  TopArtistComponent, 
+  RightPanelComponent 
+} from 'src/app/components';
 import { HomeComponent } from '..';
 
 
@@ -16,7 +22,8 @@ import { HomeComponent } from '..';
     MenuButtonComponent,
     UserFooterComponent,
     HomeComponent,
-    TopArtistComponent
+    TopArtistComponent,
+    RightPanelComponent
   ],
   imports: [
     CommonModule,
