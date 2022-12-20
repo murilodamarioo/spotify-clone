@@ -1,4 +1,4 @@
-.host {
+:host {
     display: flex;
     justify-content: space-between;
 
@@ -10,7 +10,11 @@
         overflow-y: scroll;
     }
 
+    .d-block {
+        display: block;
+    }
+
     .right-panel {
-        
+        height: 100vh;
     }
 }
