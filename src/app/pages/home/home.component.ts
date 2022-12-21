@@ -42,11 +42,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   async execMusic(music: IMusic) {
     await this.spotifyService.executeMusic(music.id)
+    this.playerService.setCurrentMusic(music)
   }
 
   getCurrentMusic() {
     const sub = this.playerService.currentMusic.subscribe(music => {
       this.currentMusic = music
+      console.log('Current music: ', this.currentMusic)
     })
 
     this.subs.push(sub)

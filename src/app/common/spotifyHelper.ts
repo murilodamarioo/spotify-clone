@@ -1,5 +1,6 @@
 import { addMilliseconds, format } from 'date-fns';
 import { IArtist, IMusic, IPlaylist, IUser } from '../interfaces';
+import { newMusic } from './factories';
 
 
 export function spotifyUserToUser(user: SpotifyApi.CurrentUsersProfileResponse): IUser {
@@ -27,6 +28,11 @@ export function spotifyArtistToArtist(spotifyArtist: SpotifyApi.ArtistObjectFull
 }
 
 export function spotifyTrackToMusic(spotifyTrack: SpotifyApi.TrackObjectFull): IMusic {
+
+    if (!spotifyTrack) {
+        return newMusic()
+    }
+
     const msToMinutes = (ms: number) => {
         const date = addMilliseconds(new Date(0), ms)
         return format(date, 'mm:ss')
