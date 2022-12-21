@@ -3,12 +3,12 @@
 .table {
     width: 100%;
     text-align: left;
-    table-layout: fixed;
+    // table-layout: fixed;
     border-collapse: separate;
 
     .play {
         color: $primary-color;
-        font-size: .70rem;
+        font-size: .5rem;
     }
 
     thead th {
@@ -17,13 +17,13 @@
         color: $black-transparent-30;
     }
 
-    th td {
+    th, td {
         padding-right: 20px;
-        white-space: nowrap;
+        // white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
 
-        &:nth-child(1){
+        &:nth-child(1) {
             padding-left: 10px;
         }
     }
@@ -31,6 +31,7 @@
     tr {
         &:hover {
             cursor: pointer;
+
             td {
                 color: $primary-color;
             }
@@ -44,7 +45,7 @@
             color: $black-transparent-70;
 
             &:nth-child(1) {
-                padding-left: 5px;
+                padding-left: 10px;
             }
         }
     }
@@ -52,15 +53,9 @@
     .w {
         @for $i from 1 to 10 {
             $width: $i * 5;
-            &-#{ $width } {
-                width: #{ $width * 1% };
-            }
+        &-#{ $width } {
+            width: #{ $width * 1% };
         }
     }
-
-    .center {
-        text-align: center;
-    }
-
+  }
 }
-

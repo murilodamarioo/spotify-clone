@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private spotifyService: SpotifyService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getMusics()
   }
 
