@@ -62,7 +62,7 @@ $h-disregard: calc($h-spotify-logo + $h-menu-options + $h-user-footer);
             overflow-y: auto;
 
             &::-webkit-scrollbar-track {
-                background-color: #F4F4F4;
+                background: rgba(13, 228, 49, 0.267);
                 border-radius: 5px;
             }
             &::-webkit-scrollbar {
