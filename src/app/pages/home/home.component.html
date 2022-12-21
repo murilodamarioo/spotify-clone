@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let music of musics">
+            <tr *ngFor="let music of musics" (click)="execMusic(music)">
                 <td>
                     <fa-icon class="play" [icon]="playIcon"></fa-icon>
                 </td>

@@ -1,4 +1,4 @@
-import { IArtist, IPlaylist, IUser } from '../interfaces';
+import { IArtist, IMusic, IPlaylist, IUser } from '../interfaces';
 import { Injectable } from '@angular/core';
 import { SpotifyConfiguration } from 'src/environments/environment';
 import  Spotify  from  'spotify-web-api-js'
@@ -9,7 +9,7 @@ import {
   spotifyUserToUser 
 } from '../common/spotifyHelper';
 import { Router } from '@angular/router';
-import { IMusic } from '../interfaces/IMusic';
+
 
 
 @Injectable({
@@ -92,6 +92,11 @@ export class SpotifyService {
     const musics = await this.spotifyApi.getMySavedTracks({offset, limit})
 
     return musics.items.map(x => spotifyTrackToMusic(x.track))
+  }
+
+  async executeMusic(music: string) {
+    await this.spotifyApi.queue(music)
+    await this.spotifyApi.skipToNext()
   }
 
   logoutAccount () {

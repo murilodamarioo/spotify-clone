@@ -1,5 +1,5 @@
-import { IArtist } from "../interfaces";
-import { IMusic } from "../interfaces/IMusic";
+import { IArtist, IMusic } from "../interfaces";
+
 
 export function newArtist(): IArtist {
     return {

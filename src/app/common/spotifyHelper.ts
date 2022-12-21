@@ -1,6 +1,6 @@
 import { addMilliseconds, format } from 'date-fns';
-import { IArtist, IPlaylist, IUser } from '../interfaces';
-import { IMusic } from '../interfaces/IMusic';
+import { IArtist, IMusic, IPlaylist, IUser } from '../interfaces';
+
 
 export function spotifyUserToUser(user: SpotifyApi.CurrentUsersProfileResponse): IUser {
     return {
@@ -33,7 +33,7 @@ export function spotifyTrackToMusic(spotifyTrack: SpotifyApi.TrackObjectFull): I
     }
 
     return {
-        id: spotifyTrack.id,
+        id: spotifyTrack.uri,
         title: spotifyTrack.name,
         album: {
             id: spotifyTrack.id,
