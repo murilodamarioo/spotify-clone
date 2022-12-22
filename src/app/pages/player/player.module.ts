@@ -9,9 +9,11 @@ import {
   LeftPanelComponent, 
   MenuButtonComponent, 
   TopArtistComponent, 
-  RightPanelComponent 
+  RightPanelComponent, 
+  RecentSearchesComponent
 } from 'src/app/components';
 import { HomeComponent } from '..';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -23,11 +25,13 @@ import { HomeComponent } from '..';
     UserFooterComponent,
     HomeComponent,
     TopArtistComponent,
-    RightPanelComponent
+    RightPanelComponent,
+    RecentSearchesComponent
   ],
   imports: [
     CommonModule,
     FontAwesomeModule,
+    FormsModule,
     RouterModule.forChild(PlayerRoutes)
   ]
 })

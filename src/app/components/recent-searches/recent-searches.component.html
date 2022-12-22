@@ -1,0 +1,6 @@
+<input type="text" [(ngModel)]="searchField">
+<div class="suggestions">
+    <span *ngFor="let search of recentSearches">
+    {{ search }}
+    </span>
+</div>

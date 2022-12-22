@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RightPanelComponent } from './components/right-panel/right-panel.component';
+import { RecentSearchesComponent } from './components/recent-searches/recent-searches.component';
 
 @NgModule({
   declarations: [
