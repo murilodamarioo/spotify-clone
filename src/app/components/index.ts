@@ -9,3 +9,5 @@ export { TopArtistComponent } from './top-artist/top-artist.component';
 export { RightPanelComponent } from './right-panel/right-panel.component';
 
 export { RecentSearchesComponent } from './recent-searches/recent-searches.component'
+
+export { TopArtistsComponent } from './top-artists/top-artists.component'

@@ -10,7 +10,8 @@ import {
   MenuButtonComponent, 
   TopArtistComponent, 
   RightPanelComponent, 
-  RecentSearchesComponent
+  RecentSearchesComponent,
+  TopArtistsComponent
 } from 'src/app/components';
 import { HomeComponent } from '..';
 import { FormsModule } from '@angular/forms';
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     TopArtistComponent,
     RightPanelComponent,
-    RecentSearchesComponent
+    RecentSearchesComponent,
+    TopArtistsComponent,
   ],
   imports: [
     CommonModule,
