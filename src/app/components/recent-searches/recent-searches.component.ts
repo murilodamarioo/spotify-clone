@@ -7,13 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecentSearchesComponent implements OnInit {
 
-  recentSearches = ['Top Brasil', 'Top Global', 'O Melhor do Trap Brasil']
+  recentSearches = ['Top Brasil', 'Top Global', 'O Melhor do Trap Brasil', 'Playlist Nostalgia 2010-2012']
 
-  searchField = 'Post Malone'
+  searchField = ''
   
   constructor () {}
 
   ngOnInit(): void {
       
+  }
+
+  setSearch(search: string) {
+    this.searchField = search
+  }
+
+  searchInputValue() {
+    console.log('Searching... ', this.searchField)
   }
 }

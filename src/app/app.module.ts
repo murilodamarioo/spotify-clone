@@ -6,10 +6,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { RightPanelComponent } from './components/right-panel/right-panel.component';
 import { RecentSearchesComponent } from './components/recent-searches/recent-searches.component';
+import { TopArtistsComponent } from './components/top-artists/top-artists.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    TopArtistsComponent,
   ],
   imports: [
     BrowserModule,
