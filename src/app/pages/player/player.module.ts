@@ -11,7 +11,8 @@ import {
   TopArtistComponent, 
   RightPanelComponent, 
   RecentSearchesComponent,
-  TopArtistsComponent
+  TopArtistsComponent,
+  ArtistItemImageComponent
 } from 'src/app/components';
 import { HomeComponent } from '..';
 import { FormsModule } from '@angular/forms';
@@ -29,6 +30,7 @@ import { FormsModule } from '@angular/forms';
     RightPanelComponent,
     RecentSearchesComponent,
     TopArtistsComponent,
+    ArtistItemImageComponent,
   ],
   imports: [
     CommonModule,
