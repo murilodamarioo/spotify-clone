@@ -13,3 +13,5 @@ export { RecentSearchesComponent } from './recent-searches/recent-searches.compo
 export { TopArtistsComponent } from './top-artists/top-artists.component';
 
 export  { ArtistItemImageComponent } from './artist-item-image/artist-item-image.component';
+
+export { PlayerCardComponent } from './player-card/player-card.component';
