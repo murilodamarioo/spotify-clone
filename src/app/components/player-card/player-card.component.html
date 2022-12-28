@@ -3,8 +3,8 @@
     <div class="controls">
         <span>{{ music.title }}</span>
         <div class="buttons">
-            <fa-icon [icon]="stepBackwardIcon"></fa-icon>
-            <fa-icon [icon]="stepForwardIcon"></fa-icon>
+            <fa-icon [icon]="stepBackwardIcon" (click)="returnMusic()"></fa-icon>
+            <fa-icon [icon]="stepForwardIcon" (click)="nextMusic()"></fa-icon>
         </div>
     </div>
 </div>

@@ -105,6 +105,14 @@ export class SpotifyService {
     return spotifyTrackToMusic(spotidyMusic.item)
   }
 
+  async returnMusic() {
+    await this.spotifyApi.skipToPrevious()
+  }
+
+  async nextMusic() {
+    await this.spotifyApi.skipToNext()
+  }
+
   logoutAccount () {
     localStorage.clear()
     this.router.navigate(['/login'])
