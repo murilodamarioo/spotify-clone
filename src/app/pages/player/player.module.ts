@@ -14,6 +14,7 @@ import {
   TopArtistsComponent,
   ArtistItemImageComponent,
   PlayerCardComponent,
+  BannerComponent,
 } from 'src/app/components';
 import { HomeComponent, ListMusicComponent } from '..';
 import { FormsModule } from '@angular/forms';
@@ -33,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     TopArtistsComponent,
     ArtistItemImageComponent,
     PlayerCardComponent,
-    ListMusicComponent
+    ListMusicComponent,
+    BannerComponent
   ],
   imports: [
     CommonModule,

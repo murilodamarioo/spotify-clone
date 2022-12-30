@@ -54,7 +54,7 @@ export class ListMusicComponent implements OnInit, OnDestroy {
 
 
   async getPlaylistData(playlistId: string) {
-
+    const playlistMusics =  await this.spotifyService.searchMusicsFromPlaylist(playlistId)
   }
 
   async getArtistData(artistId: string) {
