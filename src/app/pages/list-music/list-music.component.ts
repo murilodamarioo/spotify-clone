@@ -55,10 +55,17 @@ export class ListMusicComponent implements OnInit, OnDestroy {
 
   async getPlaylistData(playlistId: string) {
     const playlistMusics =  await this.spotifyService.searchMusicsFromPlaylist(playlistId)
+    this.setPageData(playlistMusics.name, playlistMusics.imageUrl, playlistMusics.musics)
   }
 
   async getArtistData(artistId: string) {
 
+  }
+
+  setPageData(bannerText: string, bannerImage: string, musics: IMusic[]) {
+    this.bannerImageUrl = bannerImage
+    this.bannerText = bannerText
+    this.musics = musics
   }
 
 }
