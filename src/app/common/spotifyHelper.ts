@@ -1,6 +1,6 @@
 import { addMilliseconds, format } from 'date-fns';
 import { IArtist, IMusic, IPlaylist, IUser } from '../interfaces';
-import { newMusic } from './factories';
+import { newMusic, newPlaylist } from './factories';
 
 
 export function spotifyUserToUser(user: SpotifyApi.CurrentUsersProfileResponse): IUser {
@@ -19,11 +19,25 @@ export function spotifyPlaylistToPlaylist(playlist: SpotifyApi.PlaylistObjectSim
     }
 }
 
+export function spotifySinglePlaylistToPlaylist(playlist: SpotifyApi.SinglePlaylistResponse): IPlaylist {
+    if (!playlist) {
+        return newPlaylist()
+    }
+
+    return {
+        id: playlist.id,
+        name: playlist.name,
+        imageUrl: playlist.images.shift().url,
+        musics: []
+    }
+}
+
 export function spotifyArtistToArtist(spotifyArtist: SpotifyApi.ArtistObjectFull): IArtist {
     return {
         id: spotifyArtist.id,
         name: spotifyArtist.name,
-        imageUrl: spotifyArtist.images.sort((a,b)=> a.width - b.width).pop().url
+        imageUrl: spotifyArtist.images.sort((a,b)=> a.width - b.width).pop().url,
+        musics: []
     }
 }
 

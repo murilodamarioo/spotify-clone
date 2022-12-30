@@ -5,6 +5,7 @@ import  Spotify  from  'spotify-web-api-js'
 import { 
   spotifyArtistToArtist, 
   spotifyPlaylistToPlaylist, 
+  spotifySinglePlaylistToPlaylist, 
   spotifyTrackToMusic, 
   spotifyUserToUser 
 } from '../common/spotifyHelper';
@@ -76,10 +77,26 @@ export class SpotifyService {
     localStorage.setItem('token', token)
   }
 
-  async  searchPlaylistsUser(offset = 0, limit = 50): Promise<IPlaylist[]> {
+  async searchPlaylistsUser(offset = 0, limit = 50): Promise<IPlaylist[]> {
     const playlists = await this.spotifyApi.getUserPlaylists(this.user.id, { offset, limit })
 
     return playlists.items.map(x => spotifyPlaylistToPlaylist(x))
+  }
+
+  async searchMusicsFromPlaylist(playlistId: string, offset: number = 0, limit: number = 50) {
+    const playlistSpotify = await this.spotifyApi.getPlaylist(playlistId)
+
+    if (!playlistSpotify) {
+      return null
+    }
+
+    const playlist = spotifySinglePlaylistToPlaylist(playlistSpotify)
+
+    const musicsSpotify = await this.spotifyApi.getPlaylistTracks(playlistId, { offset, limit })
+
+    playlist.musics = musicsSpotify.items.map(music => spotifyTrackToMusic(music.track as SpotifyApi.TrackObjectFull))
+
+    return playlist
   }
 
   async searchTopArtists(limit = 10): Promise<IArtist[]> {

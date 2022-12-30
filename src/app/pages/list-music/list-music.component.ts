@@ -4,6 +4,7 @@ import { newMusic } from 'src/app/common/factories';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IMusic } from 'src/app/interfaces';
 import { ActivatedRoute } from '@angular/router';
+import { SpotifyService } from 'src/app/services';
 
 @Component({
   selector: 'app-list-music',
@@ -22,7 +23,7 @@ export class ListMusicComponent implements OnInit, OnDestroy {
 
   subs: Subscription[] = []
 
-  constructor(private activedRoute: ActivatedRoute) {}
+  constructor(private activedRoute: ActivatedRoute, private spotifyService: SpotifyService) {}
 
   ngOnInit(): void {
       this.getMusics()
@@ -53,7 +54,7 @@ export class ListMusicComponent implements OnInit, OnDestroy {
 
 
   async getPlaylistData(playlistId: string) {
-    
+
   }
 
   async getArtistData(artistId: string) {
