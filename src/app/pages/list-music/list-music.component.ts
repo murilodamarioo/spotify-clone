@@ -1,10 +1,10 @@
 import { Subscription } from 'rxjs';
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faClock } from '@fortawesome/free-solid-svg-icons';
 import { newMusic } from 'src/app/common/factories';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IMusic } from 'src/app/interfaces';
 import { ActivatedRoute } from '@angular/router';
-import { SpotifyService } from 'src/app/services';
+import { PlayerService, SpotifyService } from 'src/app/services';
 
 @Component({
   selector: 'app-list-music',
@@ -20,17 +20,33 @@ export class ListMusicComponent implements OnInit, OnDestroy {
   currentMusic: IMusic = newMusic()
 
   playIcon = faPlay
+  timerIcon = faClock
 
   subs: Subscription[] = []
 
-  constructor(private activedRoute: ActivatedRoute, private spotifyService: SpotifyService) {}
+  title = ''
+
+  constructor(
+    private activedRoute: ActivatedRoute, 
+    private spotifyService: SpotifyService, 
+    private playerService: PlayerService
+    ) {}
 
   ngOnInit(): void {
       this.getMusics()
+      this.getCurrentMusic()
   }
 
   ngOnDestroy(): void {
       this.subs.forEach(sub => sub.unsubscribe())
+  }
+
+  getCurrentMusic() {
+    const sub = this.playerService.currentMusic.subscribe(music => {
+      this.currentMusic = music
+    })
+
+    this.subs.push(sub)
   }
 
   getMusics() {
@@ -56,6 +72,7 @@ export class ListMusicComponent implements OnInit, OnDestroy {
   async getPlaylistData(playlistId: string) {
     const playlistMusics =  await this.spotifyService.searchMusicsFromPlaylist(playlistId)
     this.setPageData(playlistMusics.name, playlistMusics.imageUrl, playlistMusics.musics)
+    this.title = `Músicas Playlist: ${playlistMusics.name}`
   }
 
   async getArtistData(artistId: string) {
@@ -66,6 +83,15 @@ export class ListMusicComponent implements OnInit, OnDestroy {
     this.bannerImageUrl = bannerImage
     this.bannerText = bannerText
     this.musics = musics
+  }
+
+  async execMusic(music: IMusic) {
+    await this.spotifyService.executeMusic(music.id)
+    this.playerService.setCurrentMusic(music)
+  }
+
+  getArtists(music: IMusic) {
+    return music.artists.map(artist => artist.name).join(', ')
   }
 
 }

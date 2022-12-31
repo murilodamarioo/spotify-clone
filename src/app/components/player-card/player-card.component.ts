@@ -32,7 +32,6 @@ export class PlayerCardComponent implements OnInit, OnDestroy {
   getMusicPlaying() {
     const sub = this.playerService.currentMusic.subscribe(music => {
       this.music = music
-      console.log('Current music: ', this.music)
     })
 
     this.subs.push(sub)
