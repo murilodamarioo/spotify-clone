@@ -15,4 +15,18 @@
         max-height: 100%;
         overflow-y: scroll;
     }
+
+    ::-webkit-scrollbar {
+        width: 7px;
+    
+        &-thumb {
+          background-color: $primary-color;
+          border-radius: 10px;
+        }
+    
+        &-track {
+          background: rgba(13, 228, 49, 0.267);
+          border-radius: 10px;
+        }
+      }
 }
